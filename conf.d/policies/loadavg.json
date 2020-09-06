@@ -1,0 +1,46 @@
+{
+    "name": "loadavg",
+    "actions": [
+        "digitalocean_create_droplet",
+        "health_check_tcp"
+    ],
+    "match": "all",
+    "conditions": [
+        {
+            "name": "load1",
+            "samples": [
+                {
+                    "family": "node_load1",
+                    "name": "node_load1"
+                }
+            ],
+            "operator": ">=",
+            "threshold": "2",
+            "function": "mean"
+        },
+        {
+            "name": "load5",
+            "samples": [
+                {
+                    "family": "node_load5",
+                    "name": "node_load5"
+                }
+            ],
+            "operator": ">=",
+            "threshold": "2",
+            "function": "mean"
+        },
+        {
+            "name": "load15",
+            "samples": [
+                {
+                    "family": "node_load15",
+                    "name": "node_load15"
+                }
+            ],
+            "operator": ">=",
+            "threshold": "2",
+            "function": "mean"
+        }
+    ]
+}

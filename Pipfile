@@ -1,0 +1,14 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+requests = "~=2.23.0"
+python-digitalocean = "~=1.15.0"
+prometheus_client = "~=0.7.1"
+
+[requires]
+python_version = "3.6"

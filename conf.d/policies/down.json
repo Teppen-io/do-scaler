@@ -1,0 +1,62 @@
+{
+    "name": "down",
+    "actions": [
+        "digitalocean_destroy_droplet"
+    ],
+    "match": "all",
+    "conditions": [
+        {
+            "name": "mem_avail",
+            "reducer": "+",
+            "samples": [
+                {
+                    "family": "node_memory_MemFree_bytes",
+                    "name": "node_memory_MemFree_bytes"
+                },
+                {
+                    "family": "node_memory_Cached_bytes",
+                    "name": "node_memory_Cached_bytes"
+                }
+            ],
+            "operator": ">=",
+            "threshold": "3102148608.0",
+            "function": "min"
+        },
+        {
+            "name": "load1",
+            "samples": [
+                {
+                    "family": "node_load1",
+                    "name": "node_load1"
+                }
+            ],
+            "operator": "<=",
+            "threshold": "0.5",
+            "function": "max"
+        },
+        {
+            "name": "load5",
+            "samples": [
+                {
+                    "family": "node_load5",
+                    "name": "node_load5"
+                }
+            ],
+            "operator": "<=",
+            "threshold": "0.5",
+            "function": "max"
+        },
+        {
+            "name": "load15",
+            "samples": [
+                {
+                    "family": "node_load15",
+                    "name": "node_load15"
+                }
+            ],
+            "operator": "<=",
+            "threshold": "0.5",
+            "function": "max"
+        }
+    ]
+}

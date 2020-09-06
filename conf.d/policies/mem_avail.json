@@ -1,0 +1,27 @@
+{
+    "name": "mem_avail",
+    "actions": [
+        "digitalocean_create_droplet",
+        "health_check_tcp"
+    ],
+    "match": "all",
+    "conditions": [
+        {
+            "name": "mem_avail",
+            "reducer": "+",
+            "samples": [
+                {
+                    "family": "node_memory_MemFree_bytes",
+                    "name": "node_memory_MemFree_bytes"
+                },
+                {
+                    "family": "node_memory_Cached_bytes",
+                    "name": "node_memory_Cached_bytes"
+                }
+            ],
+            "operator": "<=",
+            "threshold": "2068099072.0",
+            "function": "mean"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "name": "web-{}",
+    "size_slug": "s-2vcpu-4gb",
+    "image": 12345678,
+    "region": "sfo2",
+    "ssh_keys": [
+        "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+    ],
+    "private_networking": true,
+    "tags": [
+        "web",
+        "autoscaled"
+    ]
+}
