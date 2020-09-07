@@ -8,7 +8,7 @@
 
 Actions are standard Python classes that are stored in `./conf.d/actions/`.
 
-## Configurtion Options ##
+## Configuration Options ##
 
 Actions have their config passed to them by the scaler.  The config is defined in the same file as the standard [Scaler Configuration](../).
 

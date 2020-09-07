@@ -47,17 +47,17 @@ The name of the condition.
 
 One of `+`, `-`, `*`, `/`.   If defining multiple metric samples, you can reduce them down to one using these symbols.
 
-For an example see: [down.json](down.json#8) where `node_memory_MemFree_bytes` and `node_memory_Cached_bytes` are summed to create `mem_avail`.
+For an example see: [down.json](down.json#L8-L24) where `node_memory_MemFree_bytes` and `node_memory_Cached_bytes` are summed to create `mem_avail`.
 
 #### samples ####
 
 ##### name #####
 
-The name of the metric sample as returned by `do-agent`.
+The name of the metric sample.
 
 ##### family #####
 
-The family of the metric sample as returned by `do-agent`.
+The family of the metric sample.
 
 #### operator ####
 

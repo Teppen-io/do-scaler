@@ -5,9 +5,13 @@
 * [Configuration Options](#configuration-options)
   * [scaler](#scaler)
   * [scaler.metrics](#scaler\.metrics)
-  * [action](#action)
+  * [<action name>](#action)
 
 ## Introduction
+
+A scaler configuration contains all the information needed autoscale a specific droplet based on its tag.  In the config file, you will find a list of the [Policies](./policies) that define thresholds of when to scale up/down, along with the actions that the scaler will perform.
+
+You may have multiple scaler configurations which will all be run on the same interval specified in the [Base Configuration](../README.md#base-configuration).
 
 Scaler Configurations are implemented using [Python Config Parser](https://docs.python.org/3/library/configparser.html) and are stored in `./conf.d/*.cfg`.
 
@@ -40,10 +44,6 @@ max_tries = 12
 ```
 
 ## Configuration Options
-
-A scaler configuration contains all the information needed autoscale a specific droplet based on its tag.  In the config file, you will find a list of the [Policies](./policies) that define thresholds of when to scale up/down, along with the actions that the scaler will perform.
-
-You may have multiple scaler configurations which will all be run on the same interval specified in the [Base Configuration](../README.md#base-configuration).
 
 ### scaler ###
 
