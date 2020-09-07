@@ -85,7 +85,7 @@ systemctl start do-scaler.service
 
 The `do-scaler` base configuration is implemented using [Python Config Parser](https://docs.python.org/3/library/configparser.html) and is generally stored in `./do-scaler.cfg`
 
-It contains only one configuration directive, `interval` which controls how often the autoscaler runs each of the [Scaler Configurations](#scaler-configuration).
+It contains only one configuration directive, `interval` which controls how often the autoscaler runs each of the [Scaler Configurations](conf.d/).
 
 ### Scaler Configuration
 

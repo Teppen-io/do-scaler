@@ -4,12 +4,12 @@
 * [Example Configuration](#example-configuration)
 * [Configuration Options](#configuration-options)
   * [scaler](#scaler)
-  * [scaler.metrics](#scaler.metrics)
+  * [scaler.metrics](#scaler\.metrics)
   * [action](#action)
 
 ## Introduction
 
-Scaler Configurations are implemented using [Python Config Parser](https://docs.python.org/3/library/configparser.html) and are stored in `./conf.d/*.cfg`
+Scaler Configurations are implemented using [Python Config Parser](https://docs.python.org/3/library/configparser.html) and are stored in `./conf.d/*.cfg`.
 
 ## Example configuration
 
@@ -41,24 +41,40 @@ max_tries = 12
 
 ## Configuration Options
 
-A scaler configuration contains all the information needed autoscale a specific droplet based on its tag.  In the config you will find a list of the [Policies](./policies) that define thresholds of when to scale up/down, along with the configuration for all the actions that the scaler will perform.  You may have multiple scaler configurations which will all be run on the same interval specified in the [Base Configuration](../README.md#base-configuration).
+A scaler configuration contains all the information needed autoscale a specific droplet based on its tag.  In the config file, you will find a list of the [Policies](./policies) that define thresholds of when to scale up/down, along with the actions that the scaler will perform.
+
+You may have multiple scaler configurations which will all be run on the same interval specified in the [Base Configuration](../README.md#base-configuration).
 
 ### scaler ###
 
 #### do_token ####
 
+An API token with Read, Write to your DigitalOcean environment. See: [https://cloud.digitalocean.com/account/api/tokens](https://cloud.digitalocean.com/account/api/tokens)
+
 #### tag_name ####
 
+The tag that is placed on the droplet that you want to autoscale.
+
 #### policy_files ####
+
+A list of json files that define the thresholds of when to scale up/down, along with the actions that the scaler will perform.
+
+See: [Policies](./policies)
 
 ### scaler.metrics ###
 
 #### address ####
 
+One of `private_ip_address` or `public_ip_address`.  The scaler will query the droplet's metrcis using this address.
+
 #### port ####
+
+The port on which the droplet has exposed it's metrics.  Should match the [Client Configuration](../README.md#client-configuration).
 
 ### action ###
 
-Defines the configuration needed by each of the actions defined in your policy files.  It will vary depending on the requrirements of that specific action.
+The configuration needed by each of the actions defined in your policy files.  It will vary depending on the requrirements of that specific action.
+
+The config section should be named the same as the action.
 
 For more see: [Actions](./actions)
