@@ -1,6 +1,6 @@
 # do-scaler
 
-Autoscales DigitalOcean droplets based on their metrics
+Autoscales DigitalOcean droplets based on their load
 
 * [Introduction](#introduction)
 * [Client Configuration](#client-configuration)
@@ -12,9 +12,9 @@ Autoscales DigitalOcean droplets based on their metrics
 
 ## Introduction
 
-`do-scaler` runs on a server somewhere and queries droplet metrics that are exposed by the standard `do-agent` monitoring service. (Installed by default on all DigitalOcean droplets.)
+`do-scaler` creates or destroys droplets based on their load.  It does this by querying droplet metrics that are exposed by the standard `do-agent` monitoring service. (Installed by default on all DigitalOcean droplets.)
 
-Based on your confiuration parameters, it will then create or destroy droplets by leveraging the DigitalOcean API.  Additionally, you can configure your own custom [actions](conf.d/actions).  Some basic actions have been included to get you started.
+Through [Scaler Configurations](#scaler-configuration), you define policies to create or destroy droplets using the DigitalOcean API.  Additionally, you can configure your own custom [actions](conf.d/actions).
 
 ## Client Configuration
 
@@ -92,4 +92,3 @@ It contains only one configuration directive, `interval` which controls how ofte
 Scaler configurations are implemented using [Python Config Parser](https://docs.python.org/3/library/configparser.html) and are generally stored in `./conf.d/`
 
 See: [Scaler Configuration](conf.d/)
-
